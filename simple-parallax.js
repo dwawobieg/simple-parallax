@@ -2,14 +2,14 @@ jQuery(".simpleprx").each(function(){
 	jQuery(this).css('visibility', 'hidden');
 });
 
-function cubeeffects(){
+function simpleprx(){
 	jQuery(".simpleprx").each(function(){
-		scrollDisplay(this,jQuery(this).data("effect"),jQuery(this).data("delay"));
+	scrollDisplay(this,jQuery(this).data("effect"),jQuery(this).data("delay"));
 	});
 }
 
 $( window ).scroll(function() {
-	cubeeffects();
+	simpleprx();
 });
 
 function scrollDisplay(element,effect,timeout){
@@ -17,6 +17,5 @@ function scrollDisplay(element,effect,timeout){
 	elementOffset = $(element).offset().top;
 	distance      = (elementOffset - scrollTop);
 	displaydistance=distance - $(window).height()*0.8;
-	if (displaydistance<0)  setTimeout(function(){$(element).addClass(effect).css('visibility', 'visible')},timeout);
+	if ((displaydistance<0))  setTimeout(function(){$(element).addClass(effect).css('visibility', 'visible')},timeout);
 }
-
